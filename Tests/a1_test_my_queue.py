@@ -40,6 +40,7 @@ class MyTestCase(unittest.TestCase):
 
         self.assertEqual(3, my_queue.peek())
         self.assertEqual(5, my_queue.peek(1))
+        self.assertEqual(7, my_queue.peek(2))
         self.assertEqual(3, my_queue.peek())
 
         self.assertIsNone(my_queue.peek(100), msg="Should return None if no elements there.")
