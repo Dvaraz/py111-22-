@@ -33,13 +33,20 @@ class MyTestCase(unittest.TestCase):
         self.assertEqual(items, received_items)
 
     def test_peek(self):
-        priority_queue.enqueue(3)
-        priority_queue.enqueue(5)
-        priority_queue.enqueue(7)
+        high_priority = 0
+        medium_priority = 5
+        low_priority = 10
+        priority_queue.enqueue(3, medium_priority)
+        priority_queue.enqueue(5, medium_priority)
+        priority_queue.enqueue(7, medium_priority)
 
-        self.assertEqual(3, priority_queue.peek())
-        self.assertEqual(5, priority_queue.peek(1))
-        self.assertEqual(3, priority_queue.peek())
+        priority_queue.enqueue(10, high_priority)
+        priority_queue.enqueue(0, low_priority)
+
+        self.assertEqual(3, priority_queue.peek(0, medium_priority))
+        self.assertEqual(5, priority_queue.peek(1, medium_priority))
+        self.assertEqual(3, priority_queue.peek(0, medium_priority))
+        self.assertEqual(10, priority_queue.peek(0, high_priority))
 
     def test_en_de_queue_with_priority(self):
         high_priority = 0
