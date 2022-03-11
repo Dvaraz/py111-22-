@@ -18,11 +18,7 @@ class PriorityQueue:
         :return: Nothing
         complexity O(1)
         """
-        # if priority not in self.priority_queue.keys():
-        #     self.priority_queue[priority] = []
-        # self.priority_queue[priority] += [elem]
-        self.priority_queue[priority] = self.priority_queue.get(priority, [])
-        self.priority_queue[priority].append(elem)
+
         return None
 
     def dequeue(self) -> Any:
@@ -32,6 +28,7 @@ class PriorityQueue:
         :return: dequeued element
         complexity O(k)
         """
+
         if not self.priority_queue:
             return None
         high_priority_key = min(self.priority_queue)
