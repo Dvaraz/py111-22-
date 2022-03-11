@@ -21,6 +21,25 @@ def merge_func(sorted_left, sorted_right):
         r += 1
     return arr
 
+# def merge_func(sorted_left, sorted_right):
+#     arr = []
+#     l = r = 0
+#     while l < len(sorted_left) or r < len(sorted_right):
+#         if sorted_left[l] <= sorted_right[r] and l < len(sorted_left):
+#             arr.append(sorted_left[l])
+#             l += 1
+#         else:
+#             arr.append(sorted_right[r])
+#             r += 1
+
+    # while l < len(sorted_left):
+    #     arr.append(sorted_left[l])
+    #     l += 1
+    # while r < len(sorted_right):
+    #     arr.append(sorted_right[r])
+    #     r += 1
+    # return arr
+
 
 def sort(container: List[int]) -> List[int]:
     """
